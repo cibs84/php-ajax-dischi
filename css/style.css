@@ -9,9 +9,11 @@ img {
 }
 
 /* COMMONS */
+html {
+    background-color: #1e2d3b;
+}
 body {
     font-family: "Montserrat", sans-serif;
-    background-color: #1e2d3b;
 }
 
 

@@ -1,3 +1,10 @@
+<!-- 
+- Seconda Milestone:
+Attraverso l’utilizzo di axios: al caricamento della pagina axios chiederà, attraverso una chiamata api, i dischi a php e li stamperà attraverso vue.
+- Bonus:
+Attraverso un’altra chiamata api, filtrare gli album per genere lato backend. 
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,9 +46,15 @@
             <section class="albums-section">
                     
                 <div class="container">
-                    
+                    <!-- Filtra gli album per genere -->
+                    <form action="" method="get">
+                        <select class="form-select mb-5" v-model="selectedGenre" @change="getAlbums()">
+                            <option selected disabled value="all">Visualizza album per genere musicale</option>
+                            <option value="all">Tutti i generi musicali</option>
+                            <option :value="thisGenre" v-for="(thisGenre, index) in genres" :key="index">{{thisGenre}}</option>
+                        </select>
+                    </form>
         
-                    <!-- Le cards album saranno visualizzate SE sarà completato il trasferimento dei dati relativi agli album -->
                     <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5">
                         <div class="col" v-for="(thisAlbum, index) in albums" :key="index">
                             <div class="album-card">

@@ -5,6 +5,7 @@ Stampiamo i dischi solo con l’utilizzo di PHP, che stampa direttamente i disch
 
 require __DIR__ . '/database.php';
 
+$albums = $database;
 ?>
 
 <!DOCTYPE html>
@@ -41,12 +42,10 @@ require __DIR__ . '/database.php';
         <section class="albums-section">
                 
             <div class="container">
-                
     
-                <!-- Le cards album saranno visualizzate SE sarà completato il trasferimento dei dati relativi agli album -->
                 <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5">
                     
-                    <?php foreach ($database as $disc) { ?>
+                    <?php foreach ($albums as $disc) { ?>
                         
                         <div class="col">
                             <div class="album-card">
